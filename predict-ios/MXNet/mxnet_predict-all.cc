@@ -2,6 +2,7 @@
 #if defined(__MACH__)
 #include <mach/clock.h>
 #include <mach/mach.h>
+#import <UIKit/UIKit.h>
 #endif
 
 #if !defined(__WIN32__)
@@ -48113,53 +48114,68 @@ of the linear transform and an optional bias vector.)")
  * \author HPI-DeepLearning
 */
 
-
 namespace mxnet {
 namespace op {
 namespace xnor_cpu {
-
+    
 #define UNROLLN 6
-
-void xnor_gemm_unrolled(int M, int N, int K,
-                        BINARY_WORD *A, int lda,
-                        BINARY_WORD *B, int ldb,
-                        float *C, int ldc){
-  int m,k,n;
-  #pragma omp parallel for    
-  for (m = 0; m < M; ++m) {
-    #pragma omp parallel for
-    for (k = 0; k < ((K / UNROLLN) * UNROLLN); k+=UNROLLN) {
-      BINARY_WORD A_PART[UNROLLN];
-      A_PART[0] = A[m*lda+k];
-      A_PART[1] = A[m*lda+k+1];
-      A_PART[2] = A[m*lda+k+2];
-      A_PART[3] = A[m*lda+k+3];
-      A_PART[4] = A[m*lda+k+4];
-      A_PART[5] = A[m*lda+k+5];
-      #pragma omp parallel for
-      for (n = 0; n < N; ++n) {
+    void xnor_gemm_unrolled_gcd(int M, int N, int K,
+                                BINARY_WORD *A, int lda,
+                                BINARY_WORD *B, int ldb,
+                                float *C, int ldc,
+                                int m_start, int m_end){
+        int m,k,n;
+        BINARY_WORD A_PART[UNROLLN];
         int popc[UNROLLN];
-        popc[0] = __builtin_popcount(~(A_PART[0] ^ B[(k+0)*ldb+n]));
-        popc[1] = __builtin_popcount(~(A_PART[1] ^ B[(k+1)*ldb+n]));
-        popc[2] = __builtin_popcount(~(A_PART[2] ^ B[(k+2)*ldb+n]));
-        popc[3] = __builtin_popcount(~(A_PART[3] ^ B[(k+3)*ldb+n]));
-        popc[4] = __builtin_popcount(~(A_PART[4] ^ B[(k+4)*ldb+n]));
-        popc[5] = __builtin_popcount(~(A_PART[5] ^ B[(k+5)*ldb+n]));
-        C[m*ldc+n] += popc[0] + popc[1] + popc[2] + popc[3] + popc[4] + popc[5];
-      }
+        for (m = m_start; m < m_end; ++m) {
+            for (k = 0; k < ((K / UNROLLN) * UNROLLN); k+=UNROLLN) {
+                A_PART[0] = A[m*lda+k];
+                A_PART[1] = A[m*lda+k+1];
+                A_PART[2] = A[m*lda+k+2];
+                A_PART[3] = A[m*lda+k+3];
+                A_PART[4] = A[m*lda+k+4];
+                A_PART[5] = A[m*lda+k+5];
+                for (n = 0; n < N; ++n) {
+                    popc[0] = __builtin_popcount(~(A_PART[0] ^ B[(k+0)*ldb+n]));
+                    popc[1] = __builtin_popcount(~(A_PART[1] ^ B[(k+1)*ldb+n]));
+                    popc[2] = __builtin_popcount(~(A_PART[2] ^ B[(k+2)*ldb+n]));
+                    popc[3] = __builtin_popcount(~(A_PART[3] ^ B[(k+3)*ldb+n]));
+                    popc[4] = __builtin_popcount(~(A_PART[4] ^ B[(k+4)*ldb+n]));
+                    popc[5] = __builtin_popcount(~(A_PART[5] ^ B[(k+5)*ldb+n]));
+                    C[m*ldc+n] += popc[0] + popc[1] + popc[2] + popc[3] + popc[4] + popc[5];
+                }
+            }
+            
+            for (k=(K / UNROLLN) * UNROLLN; k < K; ++k) {
+                A_PART[0] = A[m*lda+k];
+                for (n = 0; n < N; ++n) {
+                    C[m * ldc + n] += __builtin_popcount(~(A_PART[0] ^ B[k * ldb + n]));
+                }
+            }
+        }
+        
     }
-
-    #pragma omp parallel for 
-    for (k=(K / UNROLLN) * UNROLLN; k < K; ++k) {
-      BINARY_WORD A_PART = A[m*lda+k];
-      #pragma omp parallel for
-      for (n = 0; n < N; ++n) {
-        C[m * ldc + n] += __builtin_popcount(~(A_PART ^ B[k * ldb + n]));
-      }
+    
+    void xnor_gemm_unrolled(int M, int N, int K,
+                            BINARY_WORD *A, int lda,
+                            BINARY_WORD *B, int ldb,
+                            float *C, int ldc){
+        const int GCD_WORK_STRIDE = 16;
+        // submit work to GCD in parallel
+        const int workSize = M;
+        dispatch_apply(workSize/GCD_WORK_STRIDE, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(size_t blockIdx){
+            const int start_i = 0 + blockIdx*GCD_WORK_STRIDE;
+            const int end_i = start_i + GCD_WORK_STRIDE;
+            xnor_gemm_unrolled_gcd(M, N, K, A, lda, B, ldb, C, ldc, start_i, end_i);
+        });
+        // do trailing block that's less than our batch size
+        const int start_e = M - workSize%GCD_WORK_STRIDE;
+        const int end_e = M;
+        if (start_e < end_e) {
+            xnor_gemm_unrolled_gcd(M, N, K, A, lda, B, ldb, C, ldc, start_e, end_e);
+        }
     }
-  }
-}
-
+    
 void xnor_gemm_unrolled_no_omp(int M, int N, int K,
                         BINARY_WORD *A, int lda,
                         BINARY_WORD *B, int ldb,
