@@ -11,25 +11,19 @@
 		472E1CC61C545B31005E3FE0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 472E1CC51C545B31005E3FE0 /* AppDelegate.m */; };
 		472E1CC91C545B31005E3FE0 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 472E1CC81C545B31005E3FE0 /* ViewController.mm */; };
 		472E1CCC1C545B31005E3FE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472E1CCA1C545B31005E3FE0 /* Main.storyboard */; };
-		472E1CCE1C545B31005E3FE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 472E1CCD1C545B31005E3FE0 /* Assets.xcassets */; };
 		472E1CD11C545B31005E3FE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472E1CCF1C545B31005E3FE0 /* LaunchScreen.storyboard */; };
 		472E1CDB1C545B53005E3FE0 /* mxnet_predict-all.cc in Sources */ = {isa = PBXBuildFile; fileRef = 472E1CD91C545B53005E3FE0 /* mxnet_predict-all.cc */; };
 		472E1CDD1C545B9A005E3FE0 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 472E1CDC1C545B9A005E3FE0 /* Accelerate.framework */; };
-		472E1CE61C546859005E3FE0 /* synset.txt in Resources */ = {isa = PBXBuildFile; fileRef = 472E1CE21C546859005E3FE0 /* synset.txt */; };
 		C86E50AA1E7839D6009137C8 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C86E50A91E7839D6009137C8 /* opencv2.framework */; };
 		C86E50AC1E784DF1009137C8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C86E50AB1E784DF1009137C8 /* UIKit.framework */; };
 		C86E50AE1E784EF8009137C8 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C86E50AD1E784EF8009137C8 /* CoreVideo.framework */; };
 		C86E50B01E784FC8009137C8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C86E50AF1E784FC8009137C8 /* CoreGraphics.framework */; };
+		C87A7CC11ED0985D00050D23 /* binarized_32_resnet-18-binary-0001.params in Resources */ = {isa = PBXBuildFile; fileRef = C87A7CBE1ED0985D00050D23 /* binarized_32_resnet-18-binary-0001.params */; };
+		C87A7CC21ED0985D00050D23 /* binarized_32_resnet-18-binary-symbol.json in Resources */ = {isa = PBXBuildFile; fileRef = C87A7CBF1ED0985D00050D23 /* binarized_32_resnet-18-binary-symbol.json */; };
+		C87A7CC31ED0985D00050D23 /* synset.txt in Resources */ = {isa = PBXBuildFile; fileRef = C87A7CC01ED0985D00050D23 /* synset.txt */; };
 		C8D9F5621E718E27005DD292 /* LICENSE_MXNet in Resources */ = {isa = PBXBuildFile; fileRef = C8D9F5611E718E27005DD292 /* LICENSE_MXNet */; };
 		C8D9F5671E719578005DD292 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D9F5661E719578005DD292 /* AVFoundation.framework */; };
 		C8D9F5691E7197BF005DD292 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D9F5681E7197BF005DD292 /* CoreMedia.framework */; };
-		C8E104C01EC36BB400941894 /* resnet_18_binary-0001.params in Resources */ = {isa = PBXBuildFile; fileRef = C8E104BE1EC36BB400941894 /* resnet_18_binary-0001.params */; };
-		C8E104C11EC36BB400941894 /* resnet_18_binary-symbol.json in Resources */ = {isa = PBXBuildFile; fileRef = C8E104BF1EC36BB400941894 /* resnet_18_binary-symbol.json */; };
-		C8E104C41EC3755200941894 /* binarized_64_resnet_18_binary-0001.params in Resources */ = {isa = PBXBuildFile; fileRef = C8E104C21EC3755200941894 /* binarized_64_resnet_18_binary-0001.params */; };
-		C8E104C51EC3755200941894 /* binarized_64_resnet_18_binary-symbol.json in Resources */ = {isa = PBXBuildFile; fileRef = C8E104C31EC3755200941894 /* binarized_64_resnet_18_binary-symbol.json */; };
-		C8E104C81EC3819300941894 /* binarized_32_resnet-18-binary-0001.params in Resources */ = {isa = PBXBuildFile; fileRef = C8E104C61EC3819300941894 /* binarized_32_resnet-18-binary-0001.params */; };
-		C8E104C91EC3819300941894 /* binarized_32_resnet-18-binary-symbol.json in Resources */ = {isa = PBXBuildFile; fileRef = C8E104C71EC3819300941894 /* binarized_32_resnet-18-binary-symbol.json */; };
-		C8FA00321E7024500063DD50 /* amalgamate_mxnet.sh in Resources */ = {isa = PBXBuildFile; fileRef = C8FA00311E7024500063DD50 /* amalgamate_mxnet.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,27 +46,21 @@
 		472E1CC71C545B31005E3FE0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		472E1CC81C545B31005E3FE0 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		472E1CCB1C545B31005E3FE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		472E1CCD1C545B31005E3FE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		472E1CD01C545B31005E3FE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		472E1CD21C545B31005E3FE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		472E1CD91C545B53005E3FE0 /* mxnet_predict-all.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "mxnet_predict-all.cc"; sourceTree = "<group>"; };
 		472E1CDA1C545B53005E3FE0 /* c_predict_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c_predict_api.h; sourceTree = "<group>"; };
 		472E1CDC1C545B9A005E3FE0 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		472E1CE21C546859005E3FE0 /* synset.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = synset.txt; sourceTree = "<group>"; };
 		C86E50A91E7839D6009137C8 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		C86E50AB1E784DF1009137C8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C86E50AD1E784EF8009137C8 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		C86E50AF1E784FC8009137C8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C87A7CBE1ED0985D00050D23 /* binarized_32_resnet-18-binary-0001.params */ = {isa = PBXFileReference; lastKnownFileType = file; name = "binarized_32_resnet-18-binary-0001.params"; path = "Models/binarized_32_resnet-18-binary-0001.params"; sourceTree = "<group>"; };
+		C87A7CBF1ED0985D00050D23 /* binarized_32_resnet-18-binary-symbol.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "binarized_32_resnet-18-binary-symbol.json"; path = "Models/binarized_32_resnet-18-binary-symbol.json"; sourceTree = "<group>"; };
+		C87A7CC01ED0985D00050D23 /* synset.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = synset.txt; path = Models/synset.txt; sourceTree = "<group>"; };
 		C8D9F5611E718E27005DD292 /* LICENSE_MXNet */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_MXNet; sourceTree = "<group>"; };
 		C8D9F5661E719578005DD292 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C8D9F5681E7197BF005DD292 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		C8E104BE1EC36BB400941894 /* resnet_18_binary-0001.params */ = {isa = PBXFileReference; lastKnownFileType = file; path = "resnet_18_binary-0001.params"; sourceTree = "<group>"; };
-		C8E104BF1EC36BB400941894 /* resnet_18_binary-symbol.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "resnet_18_binary-symbol.json"; sourceTree = "<group>"; };
-		C8E104C21EC3755200941894 /* binarized_64_resnet_18_binary-0001.params */ = {isa = PBXFileReference; lastKnownFileType = file; path = "binarized_64_resnet_18_binary-0001.params"; sourceTree = "<group>"; };
-		C8E104C31EC3755200941894 /* binarized_64_resnet_18_binary-symbol.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "binarized_64_resnet_18_binary-symbol.json"; sourceTree = "<group>"; };
-		C8E104C61EC3819300941894 /* binarized_32_resnet-18-binary-0001.params */ = {isa = PBXFileReference; lastKnownFileType = file; path = "binarized_32_resnet-18-binary-0001.params"; sourceTree = "<group>"; };
-		C8E104C71EC3819300941894 /* binarized_32_resnet-18-binary-symbol.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "binarized_32_resnet-18-binary-symbol.json"; sourceTree = "<group>"; };
-		C8FA00311E7024500063DD50 /* amalgamate_mxnet.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = amalgamate_mxnet.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,14 +102,13 @@
 		472E1CC01C545B31005E3FE0 /* predict-ios */ = {
 			isa = PBXGroup;
 			children = (
-				472E1CDE1C546859005E3FE0 /* Inception */,
+				C87A7CBD1ED0984D00050D23 /* Models */,
 				472E1CD81C545B4E005E3FE0 /* MXNet */,
 				472E1CC41C545B31005E3FE0 /* AppDelegate.h */,
 				472E1CC51C545B31005E3FE0 /* AppDelegate.m */,
 				472E1CC71C545B31005E3FE0 /* ViewController.h */,
 				472E1CC81C545B31005E3FE0 /* ViewController.mm */,
 				472E1CCA1C545B31005E3FE0 /* Main.storyboard */,
-				472E1CCD1C545B31005E3FE0 /* Assets.xcassets */,
 				472E1CCF1C545B31005E3FE0 /* LaunchScreen.storyboard */,
 				472E1CD21C545B31005E3FE0 /* Info.plist */,
 				472E1CC11C545B31005E3FE0 /* Supporting Files */,
@@ -141,25 +128,20 @@
 			isa = PBXGroup;
 			children = (
 				C8D9F5611E718E27005DD292 /* LICENSE_MXNet */,
-				C8FA00311E7024500063DD50 /* amalgamate_mxnet.sh */,
 				472E1CD91C545B53005E3FE0 /* mxnet_predict-all.cc */,
 				472E1CDA1C545B53005E3FE0 /* c_predict_api.h */,
 			);
 			path = MXNet;
 			sourceTree = "<group>";
 		};
-		472E1CDE1C546859005E3FE0 /* Inception */ = {
+		C87A7CBD1ED0984D00050D23 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C8E104C61EC3819300941894 /* binarized_32_resnet-18-binary-0001.params */,
-				C8E104C71EC3819300941894 /* binarized_32_resnet-18-binary-symbol.json */,
-				C8E104C21EC3755200941894 /* binarized_64_resnet_18_binary-0001.params */,
-				C8E104C31EC3755200941894 /* binarized_64_resnet_18_binary-symbol.json */,
-				C8E104BE1EC36BB400941894 /* resnet_18_binary-0001.params */,
-				C8E104BF1EC36BB400941894 /* resnet_18_binary-symbol.json */,
-				472E1CE21C546859005E3FE0 /* synset.txt */,
+				C87A7CBE1ED0985D00050D23 /* binarized_32_resnet-18-binary-0001.params */,
+				C87A7CBF1ED0985D00050D23 /* binarized_32_resnet-18-binary-symbol.json */,
+				C87A7CC01ED0985D00050D23 /* synset.txt */,
 			);
-			path = Inception;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		C8D9F5651E719578005DD292 /* Frameworks */ = {
@@ -234,18 +216,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C87A7CC31ED0985D00050D23 /* synset.txt in Resources */,
 				472E1CD11C545B31005E3FE0 /* LaunchScreen.storyboard in Resources */,
-				C8E104C51EC3755200941894 /* binarized_64_resnet_18_binary-symbol.json in Resources */,
+				C87A7CC11ED0985D00050D23 /* binarized_32_resnet-18-binary-0001.params in Resources */,
 				C8D9F5621E718E27005DD292 /* LICENSE_MXNet in Resources */,
-				472E1CCE1C545B31005E3FE0 /* Assets.xcassets in Resources */,
-				C8E104C91EC3819300941894 /* binarized_32_resnet-18-binary-symbol.json in Resources */,
-				C8E104C41EC3755200941894 /* binarized_64_resnet_18_binary-0001.params in Resources */,
-				C8E104C01EC36BB400941894 /* resnet_18_binary-0001.params in Resources */,
-				472E1CE61C546859005E3FE0 /* synset.txt in Resources */,
+				C87A7CC21ED0985D00050D23 /* binarized_32_resnet-18-binary-symbol.json in Resources */,
 				472E1CCC1C545B31005E3FE0 /* Main.storyboard in Resources */,
-				C8E104C11EC36BB400941894 /* resnet_18_binary-symbol.json in Resources */,
-				C8FA00321E7024500063DD50 /* amalgamate_mxnet.sh in Resources */,
-				C8E104C81EC3819300941894 /* binarized_32_resnet-18-binary-0001.params in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
