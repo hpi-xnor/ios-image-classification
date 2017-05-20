@@ -14,7 +14,6 @@
 		472E1CD11C545B31005E3FE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472E1CCF1C545B31005E3FE0 /* LaunchScreen.storyboard */; };
 		472E1CDB1C545B53005E3FE0 /* mxnet_predict-all.cc in Sources */ = {isa = PBXBuildFile; fileRef = 472E1CD91C545B53005E3FE0 /* mxnet_predict-all.cc */; };
 		472E1CDD1C545B9A005E3FE0 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 472E1CDC1C545B9A005E3FE0 /* Accelerate.framework */; };
-		C86E50AA1E7839D6009137C8 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C86E50A91E7839D6009137C8 /* opencv2.framework */; };
 		C86E50AC1E784DF1009137C8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C86E50AB1E784DF1009137C8 /* UIKit.framework */; };
 		C86E50AE1E784EF8009137C8 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C86E50AD1E784EF8009137C8 /* CoreVideo.framework */; };
 		C86E50B01E784FC8009137C8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C86E50AF1E784FC8009137C8 /* CoreGraphics.framework */; };
@@ -51,7 +50,6 @@
 		472E1CD91C545B53005E3FE0 /* mxnet_predict-all.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "mxnet_predict-all.cc"; sourceTree = "<group>"; };
 		472E1CDA1C545B53005E3FE0 /* c_predict_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c_predict_api.h; sourceTree = "<group>"; };
 		472E1CDC1C545B9A005E3FE0 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		C86E50A91E7839D6009137C8 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		C86E50AB1E784DF1009137C8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C86E50AD1E784EF8009137C8 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		C86E50AF1E784FC8009137C8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -73,7 +71,6 @@
 				C86E50AC1E784DF1009137C8 /* UIKit.framework in Frameworks */,
 				C8D9F5691E7197BF005DD292 /* CoreMedia.framework in Frameworks */,
 				C8D9F5671E719578005DD292 /* AVFoundation.framework in Frameworks */,
-				C86E50AA1E7839D6009137C8 /* opencv2.framework in Frameworks */,
 				472E1CDD1C545B9A005E3FE0 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,7 +147,6 @@
 				C86E50AF1E784FC8009137C8 /* CoreGraphics.framework */,
 				C86E50AD1E784EF8009137C8 /* CoreVideo.framework */,
 				C86E50AB1E784DF1009137C8 /* UIKit.framework */,
-				C86E50A91E7839D6009137C8 /* opencv2.framework */,
 				C8D9F5681E7197BF005DD292 /* CoreMedia.framework */,
 				C8D9F5661E719578005DD292 /* AVFoundation.framework */,
 			);
