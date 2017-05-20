@@ -12,7 +12,7 @@
 		472E1CC91C545B31005E3FE0 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 472E1CC81C545B31005E3FE0 /* ViewController.mm */; };
 		472E1CCC1C545B31005E3FE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472E1CCA1C545B31005E3FE0 /* Main.storyboard */; };
 		472E1CD11C545B31005E3FE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472E1CCF1C545B31005E3FE0 /* LaunchScreen.storyboard */; };
-		472E1CDB1C545B53005E3FE0 /* mxnet_predict-all.cc in Sources */ = {isa = PBXBuildFile; fileRef = 472E1CD91C545B53005E3FE0 /* mxnet_predict-all.cc */; };
+		472E1CDB1C545B53005E3FE0 /* mxnet_predict-all.mm in Sources */ = {isa = PBXBuildFile; fileRef = 472E1CD91C545B53005E3FE0 /* mxnet_predict-all.mm */; };
 		472E1CDD1C545B9A005E3FE0 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 472E1CDC1C545B9A005E3FE0 /* Accelerate.framework */; };
 		C86E50AC1E784DF1009137C8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C86E50AB1E784DF1009137C8 /* UIKit.framework */; };
 		C86E50AE1E784EF8009137C8 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C86E50AD1E784EF8009137C8 /* CoreVideo.framework */; };
@@ -47,7 +47,7 @@
 		472E1CCB1C545B31005E3FE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		472E1CD01C545B31005E3FE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		472E1CD21C545B31005E3FE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		472E1CD91C545B53005E3FE0 /* mxnet_predict-all.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "mxnet_predict-all.cc"; sourceTree = "<group>"; };
+		472E1CD91C545B53005E3FE0 /* mxnet_predict-all.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "mxnet_predict-all.mm"; sourceTree = "<group>"; };
 		472E1CDA1C545B53005E3FE0 /* c_predict_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c_predict_api.h; sourceTree = "<group>"; };
 		472E1CDC1C545B9A005E3FE0 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		C86E50AB1E784DF1009137C8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -125,7 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				C8D9F5611E718E27005DD292 /* LICENSE_MXNet */,
-				472E1CD91C545B53005E3FE0 /* mxnet_predict-all.cc */,
+				472E1CD91C545B53005E3FE0 /* mxnet_predict-all.mm */,
 				472E1CDA1C545B53005E3FE0 /* c_predict_api.h */,
 			);
 			path = MXNet;
@@ -228,7 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				472E1CDB1C545B53005E3FE0 /* mxnet_predict-all.cc in Sources */,
+				472E1CDB1C545B53005E3FE0 /* mxnet_predict-all.mm in Sources */,
 				472E1CC91C545B31005E3FE0 /* ViewController.mm in Sources */,
 				472E1CC61C545B31005E3FE0 /* AppDelegate.m in Sources */,
 				472E1CC31C545B31005E3FE0 /* main.m in Sources */,
