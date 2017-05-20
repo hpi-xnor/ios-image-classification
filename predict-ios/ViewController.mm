@@ -6,15 +6,13 @@
 //  Copyright © 2016 Haoxiang Li. All rights reserved.
 //
 
-#ifdef __cplusplus
-#import <opencv2/opencv.hpp>
-#endif
-
 #import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AVFoundation/AVCaptureDevice.h> // For access to the camera
 #import <AVFoundation/AVCaptureInput.h> // For adding a data input to the camera
 #import <AVFoundation/AVCaptureSession.h>
+
+#include <queue>
 
 //NSLock *predictionRunningLock = [NSLock new] ;
 
