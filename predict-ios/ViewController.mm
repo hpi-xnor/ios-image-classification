@@ -12,10 +12,6 @@
 #import <AVFoundation/AVCaptureInput.h> // For adding a data input to the camera
 #import <AVFoundation/AVCaptureSession.h>
 
-#include <queue>
-
-//NSLock *predictionRunningLock = [NSLock new] ;
-
 dispatch_semaphore_t predictionRunningSemaphore = dispatch_semaphore_create(1);
 
 static void * ExposureTargetBiasContext = &ExposureTargetBiasContext;
@@ -28,6 +24,12 @@ static void * ExposureTargetBiasContext = &ExposureTargetBiasContext;
 
 @implementation ViewController
 
+
+struct Comp{
+    Comp( const std::vector<float>& v ) : _v(v) {}
+    bool operator ()(float a, float b) { return _v[a] > _v[b]; }
+    const std::vector<float>& _v;
+};
 
 - (NSString *)classifyNumber:(UIImage *)image {
     const int numForRendering = kDefaultWidth*kDefaultHeight*(kDefaultChannels+1);
@@ -98,21 +100,16 @@ static void * ExposureTargetBiasContext = &ExposureTargetBiasContext;
     
     NSString *classification = [[model_synset objectAtIndex:max_idx] componentsJoinedByString:@" "];
     
-    std::priority_queue<std::pair<double, int>> q;
-    int k = 5; // number of indices we need
-    for (int i = 0; i < outputs.size(); ++i) {
-        if(q.size()<k)
-            q.push(std::pair<double, int>(outputs[i], i));
-        else if(q.top().first<outputs[i]){
-            q.pop();
-            q.push(std::pair<double, int>(outputs[i], i));
-        }
+    std::vector<float> sorted_outputs;
+    sorted_outputs.resize(outputs.size());
+    for( int i = 0; i < outputs.size(); ++i ) {
+        sorted_outputs[i]= i;
     }
+    std::partial_sort(sorted_outputs.begin(), sorted_outputs.begin()+5, sorted_outputs.end(), Comp(outputs));
     
     NSMutableArray* stringArray = [NSMutableArray new];
     for (int i = 0; i < 5; ++i) {
-        [stringArray addObject: [NSString stringWithFormat:@"%f %@", q.top().first, [[model_synset objectAtIndex:q.top().second] componentsJoinedByString:@" "]]];
-        q.pop();
+        [stringArray addObject: [NSString stringWithFormat:@"%f %@", outputs[sorted_outputs[i]], [[model_synset objectAtIndex: sorted_outputs[i]] componentsJoinedByString:@" "]]];
     }
     
     dispatch_async(dispatch_get_main_queue(), ^(){
