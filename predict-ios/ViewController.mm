@@ -319,6 +319,11 @@ struct Comp{
     previewLayer.frame = self.imageViewPhoto.bounds; // Assume you want the preview layer to fill the view.
     [self.imageViewPhoto.layer addSublayer:previewLayer];
     
+    UIView *barcodeCapturedView = [[UIView alloc] initWithFrame: self.imageViewPhoto.frame];
+    barcodeCapturedView.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    barcodeCapturedView.frame = CGRectMake(0, 100, 132, 85);
+    [self.imageViewPhoto addSubview: barcodeCapturedView];
+
     return session;
 }
 
