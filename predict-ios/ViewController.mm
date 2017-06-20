@@ -92,10 +92,7 @@ struct Comp{
     NSTimeInterval executionTime = [methodFinish timeIntervalSinceDate:methodStart];
     NSString *timeOutput = [NSString stringWithFormat:@"forward pass took %f", executionTime];
     NSLog(@"%@", timeOutput);
-    
-    dispatch_async(dispatch_get_main_queue(), ^(){
-    });
-    
+
     size_t max_idx = std::distance(outputs.begin(), std::max_element(outputs.begin(), outputs.end()));
     
     NSString *classification = [[model_synset objectAtIndex:max_idx] componentsJoinedByString:@" "];
